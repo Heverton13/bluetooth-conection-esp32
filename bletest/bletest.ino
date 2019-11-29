@@ -37,7 +37,7 @@ class CharacteristicCallbacks: public BLECharacteristicCallbacks {
            for (int i = 0; i < rxValue.length(); i++) {
              Serial.print(rxValue[i]);
                }
-               Serial.println();
+               Serial.println("Entrou Aqui");
                //L1 liga o LED | L0 desliga o LED
                if (rxValue.find("L1") != -1) { 
              digitalWrite(LED, HIGH);
@@ -101,7 +101,7 @@ void loop() {
     if (deviceConnected) {
             Serial.println("Conectou... ");
             //characteristicTX->setValue(100); //seta o valor que a caracteristica notificará (enviar) 
-            characteristicTX->notify(); // Envia o valor para o smartphone
+            //characteristicTX->notify(); // Envia o valor para o smartphone
     }
     delay(1000);
 }
